@@ -3,18 +3,29 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 // import styled from 'styled-components';
+import styles from './styles/Navigation.module.css';
 
 export default function Navigation() {
     const path = usePathname();
-    console.log('🚀::', path);
+    const isHome = path === '/';
+    const isAbout = path === '/about';
     return (
-        <nav>
-            <ul>
-                <li>
-                    <Link href="/">Home {path === '/' && '🏠'}</Link>
+        <nav className={styles.nav}>
+            <ul className={styles.list}>
+                <li className={styles.item}>
+                    <Link href="/" className={isHome ? styles.active : ''}>
+                        {isHome && '🏠'}
+                        Home
+                    </Link>
                 </li>
-                <li>
-                    <Link href="/about">About {path === '/about' && '✨'}</Link>
+                <li className={styles.item}>
+                    <Link
+                        href="/about"
+                        className={isAbout ? styles.active : ''}
+                    >
+                        {isAbout && '✨'}
+                        About
+                    </Link>
                 </li>
             </ul>
         </nav>

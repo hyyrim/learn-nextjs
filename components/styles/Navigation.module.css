@@ -1,0 +1,22 @@
+.nav {
+    width: 50%;
+    padding: 8px 24px;
+    margin: 8px auto;
+    line-height: 1.8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.list {
+    display: flex;
+    gap: 12px;
+    font-size: 21px;
+    list-style: none;
+}
+
+.item {
+}
+
+.active {
+    font-weight: bold;
+}
